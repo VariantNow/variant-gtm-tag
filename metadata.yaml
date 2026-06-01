@@ -1,0 +1,7 @@
+homepage: "https://www.variantnow.com"
+documentation: "https://www.variantnow.com/docs/google-tag-manager"
+versions:
+  # Replace the sha below with the full commit SHA of the commit that contains
+  # the template.tpl you want to publish, then push. See README for details.
+  - sha: REPLACE_WITH_COMMIT_SHA
+    changeNotes: Initial release.
