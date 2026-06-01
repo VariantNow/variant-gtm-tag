@@ -1,5 +1,5 @@
 homepage: "https://www.variantnow.com"
 documentation: "https://www.variantnow.com/docs/google-tag-manager"
 versions:
-  - sha: cad89eee864f594face8110def29471e924b2f3f
+  - sha: ced7af161f975257b5cc628355bd7b2241e48e05
     changeNotes: Initial release.
