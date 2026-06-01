@@ -1,16 +1,12 @@
-# Variant — A/B Testing & Pixel (Google Tag Manager Template)
+# Variant — A/B Testing & Pixel
 
-A Google Tag Manager **custom tag template** that installs Variant on a store
-with a single tag. It loads two scripts:
+A Google Tag Manager tag that installs [Variant](https://www.variantnow.com) on
+your store with a single tag. It loads two Variant scripts:
 
-1. **Variant analytics pixel** — `https://storage.googleapis.com/variant_scripts/pixel.js`
-2. **Variant storefront SDK / A/B test runner** — `https://sdk.variantnow.com/test-runner.js`
-
-Because GTM runs templates in [sandboxed JavaScript](https://developers.google.com/tag-platform/tag-manager/templates/sandboxed-javascript)
-(which cannot add `data-*` attributes to an injected `<script>`), the SDK
-configuration is passed through the `window.GB_CONFIG` global, which
-`test-runner.js` reads before falling back to script-tag attributes. The pixel
-is configured by calling `VariantPixel.init()` once it has loaded.
+1. **Variant analytics pixel** — collects analytics and (optionally) automatic
+   click & scroll-depth events.
+2. **Variant storefront SDK / A/B test runner** — runs your A/B tests and
+   experiences on the storefront.
 
 ## Fields
 
@@ -20,34 +16,20 @@ is configured by calling `VariantPixel.init()` once it has loaded.
 | **Variant SDK Key** | Yes | Your Variant SDK / client key (Variant dashboard → Settings → Install). |
 | **Enable DOM event tracking** | No (default on) | Automatic click & scroll-depth tracking via the pixel. |
 
-## Usage in GTM
+## Usage
 
-1. Add this template to your container (from the Community Template Gallery, or
-   import `template.tpl` via **Templates → New → Import**).
-2. Create a new tag using the **Variant — A/B Testing & Pixel** template.
-3. Enter your **Shop ID** and **SDK Key**.
-4. Set the trigger to **Initialization - All Pages** (recommended) so Variant
-   loads as early as possible.
-5. Publish the container.
+1. Add a new tag and choose the **Variant — A/B Testing & Pixel** template.
+2. Enter your **Shop ID** and **SDK Key**.
+3. Set the trigger to **Initialization - All Pages** so Variant loads as early
+   as possible.
+4. Publish the container.
 
-## Repository structure (Community Template Gallery)
+## How it works
 
-To submit to the [Community Template Gallery](https://developers.google.com/tag-platform/tag-manager/templates/gallery),
-these files must live at the **root of a dedicated public GitHub repository**:
+The tag injects the two scripts above from Variant's CDN. Your Shop ID and SDK
+Key are passed to the SDK via the `window.GB_CONFIG` global and to the pixel via
+`VariantPixel.init()`. Both values are publishable client-side identifiers.
 
-- `template.tpl` — the exported template
-- `metadata.yaml` — homepage, documentation, and version history
-- `LICENSE` — Apache 2.0 (required, filename in all caps)
-- `README.md` — this file (optional but recommended)
+## Support
 
-### Publishing / updating
-
-`metadata.yaml` controls which version the gallery serves. After committing the
-`template.tpl` you want to publish:
-
-1. Copy the **full commit SHA** of that commit.
-2. Put it as the top `sha` entry under `versions:` in `metadata.yaml` (newest
-   first), with a short `changeNotes`.
-3. Commit and push. Updates typically appear in the gallery within 2–3 days.
-
-Make sure **Issues** are enabled on the repository so users can report bugs.
+Found a bug or have a question? Open an issue on this repository.
