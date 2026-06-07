@@ -10,11 +10,11 @@ your store with a single tag. It loads two Variant scripts:
 
 ## Fields
 
-| Field | Required | Description |
-| ----- | -------- | ----------- |
-| **Variant Shop ID** | Yes | Your Variant Shop ID (Variant dashboard → Settings → Install). |
-| **Variant SDK Key** | Yes | Your Variant SDK / client key (Variant dashboard → Settings → Install). |
-| **Enable DOM event tracking** | No (default on) | Automatic click & scroll-depth tracking via the pixel. |
+| Field                         | Required        | Description                                                             |
+| ----------------------------- | --------------- | ----------------------------------------------------------------------- |
+| **Variant Shop ID**           | Yes             | Your Variant Shop ID (Variant dashboard → Settings → Install).          |
+| **Variant SDK Key**           | Yes             | Your Variant SDK / client key (Variant dashboard → Settings → Install). |
+| **Enable DOM event tracking** | No (default on) | Automatic click & scroll-depth tracking via the pixel.                  |
 
 ## Usage
 
